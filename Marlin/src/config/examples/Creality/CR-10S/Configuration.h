@@ -1328,10 +1328,12 @@
 // @section temperature
 
 // Preheat Constants
+#define PREHEAT_1_LABEL       "PLA"
 #define PREHEAT_1_TEMP_HOTEND 205
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
+#define PREHEAT_2_LABEL       "ABS"
 #define PREHEAT_2_TEMP_HOTEND 250
 #define PREHEAT_2_TEMP_BED    80
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
@@ -1490,6 +1492,13 @@
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
 #define DISPLAY_CHARSET_HD44780 JAPANESE
+
+/**
+ * Info Screen Style (0:Classic, 1:Prusa)
+ *
+ * :[0:'Classic', 1:'Prusa']
+ */
+#define LCD_INFO_SCREEN_STYLE 0
 
 /**
  * SD CARD

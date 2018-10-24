@@ -583,9 +583,6 @@
   // and processor overload (too many expensive sqrt calls).
   #define DELTA_SEGMENTS_PER_SECOND 80
 
-  // Convert feedrates to apply to the Effector instead of the Carriages
-  //#define DELTA_FEEDRATE_SCALING
-
   // After homing move down to a height where XY movement is unconstrained
   #define DELTA_HOME_TO_SAFE_ZONE
 
@@ -1516,10 +1513,12 @@
 // @section temperature
 
 // Preheat Constants
+#define PREHEAT_1_LABEL       "PLA"
 #define PREHEAT_1_TEMP_HOTEND 190
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
+#define PREHEAT_2_LABEL       "ABS"
 #define PREHEAT_2_TEMP_HOTEND 240
 #define PREHEAT_2_TEMP_BED    100
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
@@ -1678,6 +1677,13 @@
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
 #define DISPLAY_CHARSET_HD44780 JAPANESE
+
+/**
+ * Info Screen Style (0:Classic, 1:Prusa)
+ *
+ * :[0:'Classic', 1:'Prusa']
+ */
+#define LCD_INFO_SCREEN_STYLE 0
 
 /**
  * SD CARD

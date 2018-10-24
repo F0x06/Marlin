@@ -40,6 +40,10 @@
 //=============================Thermal Settings  ============================
 //===========================================================================
 
+#define HEATER_BED_INVERTING true
+#define HEATER_0_INVERTING true
+#define HEATER_1_INVERTING true
+
 //
 // Hephestos 2 24V heated bed upgrade kit.
 // https://store.bq.com/en/heated-bed-kit-hephestos2
@@ -811,6 +815,7 @@
   #if ENABLED(MOVE_Z_WHEN_IDLE)
     #define MOVE_Z_IDLE_MULTIPLICATOR 1     // Multiply 1mm by this factor for the move step size.
   #endif
+
   //#define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
   #if ENABLED(BABYSTEP_ZPROBE_OFFSET)
     //#define BABYSTEP_HOTEND_Z_OFFSET      // For multiple hotends, babystep relative Z offsets
@@ -915,7 +920,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MINIMUM_STEPPER_DIR_DELAY 0
+//#define MINIMUM_STEPPER_DIR_DELAY 650
 
 /**
  * Minimum stepper driver pulse width (in µs)
@@ -927,7 +932,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MINIMUM_STEPPER_PULSE 2
+//#define MINIMUM_STEPPER_PULSE 2
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -941,7 +946,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MAXIMUM_STEPPER_RATE 250000
+//#define MAXIMUM_STEPPER_RATE 250000
 
 // @section temperature
 
@@ -1017,15 +1022,6 @@
 // @section extras
 
 /**
- * Extra Fan Speed
- * Adds a secondary fan speed for each print-cooling fan.
- *   'M106 P<fan> T3-255' : Set a secondary speed for <fan>
- *   'M106 P<fan> T2'     : Use the set secondary speed
- *   'M106 P<fan> T1'     : Restore the previous fan speed
- */
-//#define EXTRA_FAN_SPEED
-
-/**
  * Firmware-based and LCD-controlled retract
  *
  * Add G10 / G11 commands for automatic firmware-based retract / recover.
@@ -1059,6 +1055,15 @@
     //#define RETRACT_SYNC_MIXING         // Retract and restore all mixing steppers simultaneously
   #endif
 #endif
+
+/**
+ * Extra Fan Speed
+ * Adds a secondary fan speed for each print-cooling fan.
+ *   'M106 P<fan> T3-255' : Set a secondary speed for <fan>
+ *   'M106 P<fan> T2'     : Use the set secondary speed
+ *   'M106 P<fan> T1'     : Restore the previous fan speed
+ */
+//#define EXTRA_FAN_SPEED
 
 /**
  * Advanced Pause
@@ -1109,6 +1114,7 @@
   //#define HOME_BEFORE_FILAMENT_CHANGE           // Ensure homing has been completed prior to parking for filament change
 
   //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
+
   //#define FILAMENT_UNLOAD_ALL_EXTRUDERS         // Allow M702 to unload all extruders above a minimum target temp (as set by M302)
 #endif
 
